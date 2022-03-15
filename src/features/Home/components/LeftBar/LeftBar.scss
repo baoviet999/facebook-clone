@@ -1,0 +1,80 @@
+@use '../../../../scss/' as *;
+.left-bar {
+    width: 90%;
+    height: 90vh;
+    overflow-y: auto;
+    padding-top: 20px;
+    margin-right: 10px;
+    &__detail {
+        position: relative;
+        padding-bottom: 8px;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 93%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+    &__group {
+        padding-top: 10px;
+        &:hover {
+            .left-bar__group-header > span {
+                opacity: 1;
+                visibility :visible;
+            }
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8px;
+            margin-bottom: 8px;
+            height: 25px;
+
+            & > h4 {
+                color: rgba(0, 0, 0, 0.6);
+                font-weight: 500;
+                font-size: 15px;
+            }
+            & > span {
+                display: block;
+                padding: 8px 8px;
+                font-size: 13px;
+                color: $main-blue;
+                border-radius: 7px;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition : opacity 0.2s ease-in-out;
+                &:hover {
+                    background-color: $icon-bg;
+                }
+            }
+        }
+    }
+
+    &:hover::-webkit-scrollbar {
+        display: block;
+    }
+    &::-webkit-scrollbar {
+        width: 11px;
+        background-color: transparent;
+        display: none;
+    }
+    &::-webkit-scrollbar-track {
+        margin: 3px 0;
+        opacity: 0 !important;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+        background-color: rgba(0, 0, 0, 0.2);
+        background-clip: content-box;
+        opacity: 0 !important;
+    }
+}

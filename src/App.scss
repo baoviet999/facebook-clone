@@ -1,0 +1,12 @@
+@use './scss/' as * ;
+.app{
+    &__content {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        margin-top: calc($header-height);
+        background-color: $second-bg;
+        height: calc(100vh - $header-height);
+        
+    }
+}

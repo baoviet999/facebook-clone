@@ -1,0 +1,78 @@
+@use '../../scss/' as * ;
+.nav-item{
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding : 0 8px ;
+    background-color: transparent;
+    border-radius: 7px;
+    transition: background 0.15s ease-in-out;
+    cursor : pointer;
+    &:hover{
+        background-color: $icon-bg;
+    }
+    &.svg{
+        .nav-item__icon{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color:$icon-bg;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        margin-right: 10px;
+        & > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+            object-fit: cover;
+        }
+        & > svg {
+            width: 50%;
+            height: 50%;
+            border-radius: 14px;
+            object-fit: cover;
+        }
+    }
+    }
+    &__icon{
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+        & > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        & > svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+    &__label{
+        font-weight: 500;
+        color : $txt-color;
+        font-size: .875rem;
+        
+    }
+    &__detail{
+        font-size: 0.7rem;
+        font-weight: 400;
+        color :#1876f2;
+        padding-left: 10px;
+        position: relative;
+        margin-top : 5px; 
+        &::after{
+            position: absolute;
+            left: 0;
+            content : '';
+            width: 7px;
+            height: 7px;
+            background-color:#1876f2;
+            border-radius:50%;
+            top: 50%;
+            transform : translateY(-50%);
+        }
+    }
+}

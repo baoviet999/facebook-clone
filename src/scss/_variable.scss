@@ -1,0 +1,53 @@
+// $primary-color: red;
+// $secondary-color: blue;
+// $warning-color: yellow;
+// $error-color : pink;
+
+// $colors: (
+//     "primary": $primary-color,
+//     "secondary": $secondary-color,
+//     "error": $error-color,
+//     "blue": #1919e6,
+//     "red": #e61919,
+//     "yellow": #e6e619,
+//     "green": #19e635,
+//     "orange": #ffa600,
+//     "purple": #9900ff,
+//     "gray": #808080,
+//     "black": black,
+//     "white": white,
+//     "pink" : #ffc0cb
+// );
+// // @debug map-get($colors, 'gray');
+// // @debug map-has-key($colors, 'white');
+// // @debug map-remove($colors, 'black' ); //Giống map array loại phần tử
+// // @debug map-merge($colors, ('pink' : #ffc0cb)); //Thêm phần tử
+
+// //spacing
+// $base-border-radius: 20px;
+// $base-padding : 10px;
+// //box shadow
+// $base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+// //fontsize
+// $base-font-size: 1rem;
+// $font-size-sm: $base-font-size * 0.75;
+// $font-size-lg: $base-font-size * 1.5;
+// $font-size-xl: $base-font-size * 2;
+// $font-size-xxl: $base-font-size * 3;
+
+$header-bg : #fff ;
+$header-height : 56px ;
+
+
+
+$second-bg : #f0f2f5;
+$main-red :#F01E3F ;
+$main-blue : #1B74E4;
+$txt-color : #050505;
+$txt-second :#65676B;
+$svg-color :#65677b;
+
+$icon-bg : #e4e6eb;
+
+
