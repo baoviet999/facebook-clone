@@ -1,0 +1,10 @@
+.bg{
+    &__item{
+        width: 32px;
+        height: 32px;
+        border-radius: 5px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

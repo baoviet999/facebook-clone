@@ -9,12 +9,13 @@ import avata from '../../../../assests/avatar.png';
 import story1 from '../../../../assests/story1.jpg';
 import { ReactComponent as Next } from '../../../../assests/svg/next.svg';
 import CreateStory from 'components/StoryItem/CreateStory/CreateStory';
-import { ReactComponent as Next1 } from '../../../../assests/svg/next2.svg'
+import { ReactComponent as Next1 } from '../../../../assests/svg/next2.svg';
 // item component
 import Status from 'components/Status/Status';
 import FriendItem from 'components/FriendItem/FriendItem';
 //scss
 import './Main.scss';
+import { STORY } from 'constant/Story';
 const Main = () => {
     const [disable, setDisable] = useState(false);
     return (
@@ -34,37 +35,13 @@ const Main = () => {
                         // grabCursor={true}
                     >
                         <SwiperSlide>{({ isActive }) => <CreateStory />}</SwiperSlide>
-                        <SwiperSlide>
-                            {({ isActive }) => (
-                                <StoryItem background={story1} name="Nguyên Thiết Duy" avatar={avata} />
-                            )}
-                        </SwiperSlide>
-
-                        <SwiperSlide>
-                            {({ isActive }) => (
-                                <StoryItem background={story1} name="Bao Viet" avatar={avata} />
-                            )}
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {({ isActive }) => (
-                                <StoryItem background={story1} name="Bao Viet" avatar={avata} />
-                            )}
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {({ isActive }) => (
-                                <StoryItem background={story1} name="Bao Viet" avatar={avata} />
-                            )}
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {({ isActive }) => (
-                                <StoryItem background={story1} name="Bao Viet" avatar={avata} />
-                            )}
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {({ isActive }) => (
-                                <StoryItem background={story1} name="Bao Viet" avatar={avata} />
-                            )}
-                        </SwiperSlide>
+                        {STORY.map((item, idx) => (
+                            <SwiperSlide key={idx}>
+                                {({ isActive }) => (
+                                    <StoryItem background={item.img} name={item.name} avatar={item.avatar} />
+                                )}
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                     <div className={`main__story-btn main__story-btn-next ${disable && 'disable'}`}>
                         <Next />
