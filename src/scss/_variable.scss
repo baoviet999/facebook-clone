@@ -36,18 +36,22 @@
 // $font-size-xl: $base-font-size * 2;
 // $font-size-xxl: $base-font-size * 3;
 
-$header-bg : #fff ;
-$header-height : 56px ;
+$header-bg: #fff;
+$header-height: 56px;
 
+$second-bg: #f0f2f5;
+$main-red: #f01e3f;
+$main-blue: #1b74e4;
+$txt-color: #050505;
+$txt-second: #65676b;
+$svg-color: #65677b;
 
+$icon-bg: #e4e6eb;
 
-$second-bg : #f0f2f5;
-$main-red :#F01E3F ;
-$main-blue : #1B74E4;
-$txt-color : #050505;
-$txt-second :#65676B;
-$svg-color :#65677b;
-
-$icon-bg : #e4e6eb;
-
-
+$bg: #242526;
+$bg-accent: #484a4d;
+$text-color: #dadce1;
+$nav-size: 60px;
+$border: 1px solid O#474a4d;
+$border-radius: 8px;
+$speed: 500ms;

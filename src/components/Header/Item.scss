@@ -1,0 +1,111 @@
+@use '../../scss/' as * ;
+.nav-itemm {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3px;
+}
+
+/* Icon Button */
+.icon-button {
+    width: 40px;
+    height: 40px;
+    background-color: $icon-bg;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+    cursor : pointer;
+    &:hover{
+        filter: brightness(0.9);
+    }
+    & > svg{
+        fill : #000;
+    }
+}
+
+
+
+
+/* Dropdown Menu */
+
+.dropdown {
+    position: absolute;
+    top: 58px;
+    width: 300px;
+    transform: translateX(-45%);
+    background-color: #fff;
+    border: 8px;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow: hidden;
+    transition: height 500ms ease;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: background 500ms;
+    padding: 0.5rem;
+    & > span{
+        & > svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.menu-item .icon-button {
+    margin-right: 0.5rem;
+}
+
+.menu-item .icon-button:hover {
+    filter: none;
+}
+
+.menu-item:hover {
+    background-color: #525357;
+}
+
+.icon-right {
+    margin-left: auto;
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+    position: absolute;
+    transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+}
+.menu-primary-exit {
+    position: absolute;
+}
+.menu-primary-exit-active {
+    transform: translateX(-110%);
+    transition: all 500ms ease;
+}
+
+.menu-secondary-enter {
+    transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+}
+.menu-secondary-exit {
+}
+.menu-secondary-exit-active {
+    transform: translateX(110%);
+    transition: all 500ms ease;
+}

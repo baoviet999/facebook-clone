@@ -6,24 +6,23 @@ import { ReactComponent as Group } from '../assests/svg/group.svg';
 export const HEADER = [
     {
         icon: Home,
-        name : 'home',
-        badge : ''
+        name: 'home',
+        badge: '',
     },
     {
         icon: Friend,
-        name : 'friend',
-        badge : ''
+        name: 'friend',
+        badge: '',
     },
     {
         icon: Watch,
-        name : 'watch',
-        badge : '9+'
+        name: 'watch',
+        badge: '9+',
     },
     {
         icon: Store,
-        name : 'marketplace',
-        badge : '1'
+        name: 'marketplace',
+        badge: '1',
     },
-    { icon: Group,name : 'group',
-badge : '' },
+    { icon: Group, name: 'group', link: '/video', badge: '' },
 ];

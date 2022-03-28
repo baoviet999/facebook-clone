@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
-// Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
-import 'swiper/css';
-//file img
-import StoryItem from 'components/StoryItem/StoryItem';
-import avata from '../../../../assests/avatar.png';
-import story1 from '../../../../assests/story1.jpg';
-import { ReactComponent as Next } from '../../../../assests/svg/next.svg';
-import CreateStory from 'components/StoryItem/CreateStory/CreateStory';
-import { ReactComponent as Next1 } from '../../../../assests/svg/next2.svg';
+import { useAppSelector } from 'app/hooks';
+import FriendItem from 'components/FriendItem/FriendItem';
+import Post from 'components/Post/Post';
 // item component
 import Status from 'components/Status/Status';
-import FriendItem from 'components/FriendItem/FriendItem';
+import CreateStory from 'components/StoryItem/CreateStory/CreateStory';
+//file img
+import StoryItem from 'components/StoryItem/StoryItem';
+import { STORY } from 'constant/Story';
+import { selectStatus } from 'features/CreateStatus/statusSlice';
+import React, { useRef, useState } from 'react';
+import FlipMove from 'react-flip-move';
+import { Navigation } from 'swiper';
+import 'swiper/css';
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { ReactComponent as Next } from '../../../../assests/svg/next.svg';
+import { ReactComponent as Next1 } from '../../../../assests/svg/next2.svg';
 //scss
 import './Main.scss';
-import { STORY } from 'constant/Story';
 const Main = () => {
     const [disable, setDisable] = useState(false);
+    const statusData = useAppSelector(selectStatus);
+    const reStatusData = [...statusData].reverse();
+    const dateRef = useRef(new Date());
+    console.log(dateRef.current);
     return (
         <div className="main__wrapper">
             <div className="main">
@@ -38,7 +44,7 @@ const Main = () => {
                         {STORY.map((item, idx) => (
                             <SwiperSlide key={idx}>
                                 {({ isActive }) => (
-                                    <StoryItem background={item.img} name={item.name} avatar={item.avatar} />
+                                    <StoryItem key={idx} id={idx} background={item.img} name={item.name} avatar={item.avatar} />
                                 )}
                             </SwiperSlide>
                         ))}
@@ -86,6 +92,11 @@ const Main = () => {
                         <Next1 />
                     </div>
                 </div>
+                <FlipMove style={{ width: '100%' }}>
+                    {reStatusData.map((item, idx) => (
+                        <Post item={item} key={idx} />
+                    ))}
+                </FlipMove>
             </div>
         </div>
     );
